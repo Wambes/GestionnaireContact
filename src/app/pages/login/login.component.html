@@ -1,0 +1,23 @@
+<div class="login-container">
+  <h2>Connexion</h2>
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    
+    <label for="email">Email</label>
+    <input type="email" id="email" formControlName="email" placeholder="Entrez votre email">
+    <div *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched" class="error">
+      Email invalide.
+    </div>
+
+    <label for="password">Mot de passe</label>
+    <input type="password" id="password" formControlName="password" placeholder="Entrez votre mot de passe">
+    <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched" class="error">
+      Le mot de passe doit contenir au moins 6 caractères.
+    </div>
+
+    <button type="submit" [disabled]="loginForm.invalid">Se connecter</button>
+
+    <p *ngIf="errorMessage" class="error-message">{{ errorMessage }}</p>
+  </form>
+
+  <app-loader *ngIf="isLoading"></app-loader>
+</div>

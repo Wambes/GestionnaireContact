@@ -1,0 +1,46 @@
+<div class="dashboard">
+  <button (click)="logout()" class="logout-btn">
+    Se déconnecter
+  </button>
+  
+  <div class="actions">
+    <input type="text" [(ngModel)]="searchQuery" placeholder="Rechercher un contact..." />
+    <button (click)="searchContacts()">Rechercher</button>
+    <button routerLink="/contact-form">Ajouter Contact</button>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>N°</th>
+        <th>Nom</th>
+        <th>Prénom</th>
+        <th>Email</th>
+        <th>Téléphone</th>
+        <th>Photo</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let contact of contacts; let i = index">
+        <td>{{ i + 1 + (page - 1) * pageSize }}</td>
+        <td>{{ contact.last_name }}</td>
+        <td>{{ contact.first_name }}</td>
+        <td>{{ contact.email }}</td>
+        <td>{{ contact.phone }}</td>
+        <td><img [src]="contact.photo" alt="Photo" class="photo"></td>
+        <td>
+          <button [routerLink]="['/contact-details', contact.id]">Détails</button>
+          <button [routerLink]="['/contact-form', contact.id]">Modifier</button>
+          <button (click)="deleteContact(contact.id)">Supprimer</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="pagination">
+    <button (click)="prevPage()">Précédent</button>
+    <span>Page {{ page }}</span>
+    <button (click)="nextPage()">Suivant</button>
+  </div>
+</div>

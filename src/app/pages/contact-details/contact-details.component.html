@@ -1,0 +1,12 @@
+<div class="contact-details" *ngIf="contact">
+    <h2>Détails du Contact</h2>
+    <p><strong>First_Name:</strong> {{ contact.first_name }}</p>
+    <p><strong>Last_Name:</strong> {{ contact.last_name }}</p>
+    <p><strong>Email:</strong> {{ contact.email }}</p>
+    <p><strong>Phone:</strong> {{ contact.phone }}</p>
+    <p><strong>Photo:</strong> {{ contact.photo }}</p>
+    <p><strong>Photo:</strong> <img [src]="contact.photo" alt="Photo" class="photo"></p>
+  
+    <button routerLink="/dashboard">Retour au tableau de bord</button>
+  </div>
+  

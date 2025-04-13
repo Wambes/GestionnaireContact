@@ -1,0 +1,20 @@
+.app-navbar {
+    background-color: #f5f7fa; /* Fond gris très clair */
+    color: #333; /* Texte sombre */
+    padding: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Ombre légère */
+  }
+  
+  .navbar-content {
+    display: flex;
+    justify-content: center; /* Centre le contenu horizontalement */
+    align-items: center;
+  }
+  
+  .logo {
+    font-size: 50px;
+    font-weight: bold;
+    color: #6c63ff; /* Couleur primaire (violet pastel) */
+    text-decoration: none;
+  }
+  
