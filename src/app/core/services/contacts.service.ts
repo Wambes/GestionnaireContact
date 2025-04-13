@@ -8,7 +8,7 @@ import { environment } from '../../../environments/environment';
   providedIn: 'root'
 })
 export class ContactsService {
-  private apiUrl = environment.apiUrl1; // URL de l'API
+  private apiUrl = 'https://www.api.4gul.kanemia.com/contacts'; // URL de l'API
   
   constructor(private http: HttpClient) {}
 

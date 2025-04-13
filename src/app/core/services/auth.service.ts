@@ -9,7 +9,7 @@ import { environment } from '../../../environments/environment';
   providedIn: 'root'
 })
 export class AuthService {
-  private apiUrl = environment.apiUrl2; // URL API
+  private apiUrl = 'https://www.api.4gul.kanemia.com/auth'; // URL API
 
   constructor(private http: HttpClient, private router: Router){}
   
